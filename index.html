@@ -169,7 +169,7 @@
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 2rem;
       text-align: center;
     }
@@ -248,27 +248,163 @@
       padding: 0.35rem 0.85rem;
       border-radius: 999px;
     }
-    .about-highlights { display: flex; flex-direction: column; gap: 1.2rem; }
+    .about-right { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; }
+    .headshot-wrap {
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: var(--accent-grad);
+      padding: 3px;
+      flex-shrink: 0;
+    }
+    .headshot-inner {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--bg3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .headshot-inner img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .headshot-initials {
+      font-size: 3rem;
+      font-weight: 900;
+      background: var(--accent-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-highlights { display: flex; flex-direction: column; gap: 1rem; width: 100%; }
     .highlight-card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 1.25rem 1.5rem;
+      padding: 1.1rem 1.25rem;
       transition: border-color 0.2s;
     }
     .highlight-card:hover { border-color: rgba(108,99,255,0.4); }
     .highlight-card h4 {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 700;
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
     }
-    .highlight-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+    .highlight-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.55; }
+
+    /* ── WORK / CASE STUDIES ── */
+    #work { background: var(--bg2); }
+    .work-brand-group { margin-bottom: 4rem; }
+    .work-brand-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand-label {
+      font-size: 1.4rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+    .brand-sublabel {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .brand-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent-grad);
+      flex-shrink: 0;
+    }
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .case-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .case-card:hover {
+      border-color: rgba(108,99,255,0.4);
+      transform: translateY(-3px);
+    }
+    .case-card-header {
+      padding: 1.5rem 1.5rem 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .case-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--accent);
+      font-weight: 700;
+      background: rgba(108,99,255,0.1);
+      border: 1px solid rgba(108,99,255,0.2);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+    .case-card-body { padding: 1rem 1.5rem 1.5rem; }
+    .case-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+    .case-desc {
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .case-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .case-highlight {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .case-highlight::before {
+      content: '✦';
+      color: var(--accent2);
+      font-size: 0.65rem;
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
+    .case-highlight strong { color: var(--text); }
+    .case-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .case-tag {
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.15);
+      color: #5ecfea;
+      font-size: 0.73rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+    }
 
     /* ── EXPERIENCE ── */
-    #experience { background: var(--bg2); }
+    #experience { background: var(--bg); }
     .exp-timeline { display: flex; flex-direction: column; gap: 2rem; }
     .exp-card {
       background: var(--card);
@@ -323,10 +459,7 @@
       padding: 0.3rem 0.75rem;
       border-radius: 4px;
     }
-    .exp-location {
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
+    .exp-location { font-size: 0.82rem; color: var(--muted); }
     .exp-bullets {
       list-style: none;
       margin-top: 1.25rem;
@@ -361,7 +494,7 @@
     }
 
     /* ── SKILLS ── */
-    #skills { background: var(--bg); }
+    #skills { background: var(--bg2); }
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -375,22 +508,9 @@
       transition: border-color 0.2s;
     }
     .skill-group:hover { border-color: rgba(0,212,255,0.3); }
-    .skill-group-icon {
-      font-size: 1.75rem;
-      margin-bottom: 0.75rem;
-    }
-    .skill-group h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--text);
-    }
-    .skill-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+    .skill-group-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+    .skill-group h3 { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; color: var(--text); }
+    .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
     .skill-list li {
       color: var(--muted);
       font-size: 0.88rem;
@@ -408,7 +528,7 @@
     }
 
     /* ── PRESS ── */
-    #press { background: var(--bg2); }
+    #press { background: var(--bg); }
     .press-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -423,10 +543,7 @@
       display: block;
       transition: border-color 0.2s, transform 0.2s;
     }
-    .press-card:hover {
-      border-color: rgba(0,212,255,0.4);
-      transform: translateY(-3px);
-    }
+    .press-card:hover { border-color: rgba(0,212,255,0.4); transform: translateY(-3px); }
     .press-source {
       font-size: 0.75rem;
       font-weight: 700;
@@ -442,25 +559,12 @@
       line-height: 1.5;
       margin-bottom: 0.75rem;
     }
-    .press-desc {
-      font-size: 0.87rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    .press-arrow {
-      margin-top: 1rem;
-      color: var(--accent2);
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
+    .press-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.6; }
+    .press-arrow { margin-top: 1rem; color: var(--accent2); font-size: 0.85rem; font-weight: 600; }
 
     /* ── CONTACT ── */
-    #contact { background: var(--bg); }
-    .contact-inner {
-      max-width: 680px;
-      margin: 0 auto;
-      text-align: center;
-    }
+    #contact { background: var(--bg2); }
+    .contact-inner { max-width: 680px; margin: 0 auto; text-align: center; }
     .contact-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -468,12 +572,7 @@
       padding: 3rem 2.5rem;
       margin-top: 2.5rem;
     }
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
     .contact-link {
       display: flex;
       align-items: center;
@@ -497,22 +596,12 @@
       flex-shrink: 0;
     }
     .contact-link-text { text-align: left; }
-    .contact-link-label {
-      font-size: 0.75rem;
-      color: var(--muted);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    .contact-link-value {
-      font-size: 0.95rem;
-      color: var(--text);
-      font-weight: 600;
-    }
+    .contact-link-label { font-size: 0.75rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
+    .contact-link-value { font-size: 0.95rem; color: var(--text); font-weight: 600; }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--bg2);
+      background: var(--bg);
       border-top: 1px solid var(--border);
       text-align: center;
       padding: 2rem;
@@ -536,6 +625,7 @@
       .exp-header { flex-direction: column; }
       section { padding: 4rem 1.25rem; }
       .contact-card { padding: 2rem 1.5rem; }
+      .cases-grid { grid-template-columns: 1fr; }
     }
 
     /* ── ANIMATIONS ── */
@@ -557,6 +647,7 @@
   <div class="nav-logo">Peter Dao</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#press">Press</a></li>
@@ -573,14 +664,14 @@
       Peter <span>Dao</span>
     </h1>
     <p class="hero-title fade-up delay-2">
-      <strong>7+ years</strong> driving brand growth at Samsung, Atari &amp; Web3 startups
+      <strong>8+ years</strong> driving brand growth at Samsung, Atari &amp; Web3 startups
     </p>
     <p class="hero-desc fade-up delay-3">
       I build social media programs from scratch, turn platforms into revenue channels,
       and create the kind of content that moves real numbers — impressions, pre-orders, awareness.
     </p>
     <div class="hero-btns fade-up delay-4">
-      <a href="#experience" class="btn-primary">View My Work</a>
+      <a href="#work" class="btn-primary">See My Work</a>
       <a href="#contact" class="btn-secondary">Get in Touch</a>
     </div>
   </div>
@@ -597,7 +688,7 @@
     <div>
       <div class="stat-number">50%</div>
       <div class="stat-label">YoY Pre-Order Increase</div>
-      <div class="stat-source">Galaxy Z Fold5 &amp; Flip5 — Samsung's best ever</div>
+      <div class="stat-source">Galaxy Z — Samsung's best ever</div>
     </div>
     <div>
       <div class="stat-number">12M+</div>
@@ -605,14 +696,14 @@
       <div class="stat-source">Galaxy Creator Collective</div>
     </div>
     <div>
-      <div class="stat-number">700+</div>
-      <div class="stat-label">Event Attendees</div>
-      <div class="stat-source">Fluidity Summit 2018 (AirSwap)</div>
-    </div>
-    <div>
       <div class="stat-number">+14pt</div>
       <div class="stat-label">Brand Awareness Lift</div>
       <div class="stat-source">Targeted audience — Samsung</div>
+    </div>
+    <div>
+      <div class="stat-number">700+</div>
+      <div class="stat-label">Event Attendees</div>
+      <div class="stat-source">Fluidity Summit 2018 (AirSwap)</div>
     </div>
   </div>
 </div>
@@ -626,14 +717,13 @@
         <h2 class="section-title">Strategy-first.<br>Data-backed.<br>Results-driven.</h2>
         <div class="about-text">
           <p>
-            I'm a social media manager and strategist with over 7 years of experience leading
-            programs at both <strong>Fortune 500 companies</strong> and <strong>early-stage startups</strong>.
-            From building Samsung's most successful Galaxy Z launch to establishing Atari's social
-            presence during its blockchain era, I specialize in building things from the ground up.
+            I'm a seasoned Social Media Manager with <strong>8+ years of relevant experience</strong>.
+            Proven success in establishing and managing social media efforts for companies ranging from
+            <strong>emerging tech startups to some of the world's most recognizable and established brands</strong>.
           </p>
           <p>
             My work lives at the intersection of creative content and analytical rigor — I build
-            repeatable systems (calendars, approval workflows, KPI scorecards) so that high quality
+            repeatable systems (calendars, approval workflows, KPI scorecards) so that high-quality
             output becomes the default, not the exception.
           </p>
           <p>
@@ -648,25 +738,278 @@
           </div>
         </div>
       </div>
-      <div class="about-highlights">
-        <div class="highlight-card">
-          <h4>Brand Launches</h4>
-          <p>Built social presences from zero at AirSwap, Basilisk, and Atari — defining tone of voice, visual style, and platform strategy before a single post went live.</p>
+      <div class="about-right">
+        <div class="headshot-wrap">
+          <div class="headshot-inner">
+            <!-- Replace src below with your headshot file path once uploaded -->
+            <!-- <img src="photos/headshot.jpg" alt="Peter Dao" /> -->
+            <span class="headshot-initials">PD</span>
+          </div>
         </div>
-        <div class="highlight-card">
-          <h4>Enterprise Scale</h4>
-          <p>Managed multi-agency campaigns across Samsung Mobile's full product portfolio, coordinating directly with Meta, Google, TikTok, Twitter, and Reddit as platform partners.</p>
-        </div>
-        <div class="highlight-card">
-          <h4>Web3 &amp; Crypto Native</h4>
-          <p>Deep experience in the crypto and blockchain space — from DeFi community management at AirSwap to NFT campaign leadership at Atari (Atari × RTFKT, Atari × LEGO).</p>
-        </div>
-        <div class="highlight-card">
-          <h4>Consulting &amp; Strategy</h4>
-          <p>Currently providing social media audits, brand voice guidelines, and actionable content playbooks to clients across multiple industries as an independent consultant.</p>
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <h4>Enterprise Scale</h4>
+            <p>Led multi-agency campaigns across Samsung Mobile's full product portfolio, coordinating directly with Meta, Google, TikTok, Twitter, and Reddit.</p>
+          </div>
+          <div class="highlight-card">
+            <h4>Brand Launches from Zero</h4>
+            <p>Built social presences from scratch at AirSwap, Basilisk, and Atari — defining tone of voice, visual identity, and platform strategy.</p>
+          </div>
+          <div class="highlight-card">
+            <h4>Web3 &amp; Crypto Native</h4>
+            <p>Deep experience from DeFi community management at AirSwap to NFT campaign leadership at Atari (Atari × RTFKT, Atari × LEGO).</p>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- WORK / CASE STUDIES -->
+<section id="work">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">// selected work</div>
+      <h2 class="section-title">Campaigns &amp; Case Studies</h2>
+      <p class="section-subtitle">A selection of campaigns, partnerships, and activations across 8+ years.</p>
+    </div>
+
+    <!-- SAMSUNG -->
+    <div class="work-brand-group">
+      <div class="work-brand-header">
+        <div class="brand-dot"></div>
+        <div>
+          <div class="brand-label">Samsung Galaxy</div>
+          <div class="brand-sublabel">Marketing Coordinator · Plano, TX · 2022–2023</div>
+        </div>
+      </div>
+      <div class="cases-grid">
+
+        <div class="case-card">
+          <div class="case-card-header">
+            <div class="case-title">Summer of Galaxy</div>
+            <span class="case-num">01</span>
+          </div>
+          <div class="case-card-body">
+            <p class="case-desc">Led social strategy for Samsung's annual fan-reward program — an exclusive multi-platform celebration for Galaxy users featuring content drops, partner rewards, and a headlining live music event.</p>
+            <div class="case-highlights">
+              <div class="case-highlight">Exclusive Samsung × Billboard concert headlined by <strong>Sabrina Carpenter</strong> — her first live performance in 3 years, debuting new album material</div>
+              <div class="case-highlight">Live event in Los Angeles; streamed exclusively to Galaxy users on Samsung.com, <strong>July 22–24</strong></div>
+              <div class="case-highlight">Coordinated multi-platform giveaway via <strong>@SamsungMobileUS</strong> Twitter, YouTube, Uber Eats, Billboard &amp; Twitch partnerships</div>
+              <div class="case-highlight">Drove <strong>record fan engagement</strong> across U.S. social channels</div>
+            </div>
+            <div class="case-tags">
+              <span class="case-tag">Campaign Lead</span>
+              <span class="case-tag">Music Partnership</span>
+              <span class="case-tag">Twitter</span>
+              <span class="case-tag">Cross-Platform</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-card-header">
+            <div class="case-title">Galaxy Z Series, Watch &amp; Buds Launch</div>
+            <span class="case-num">02</span>
+          </div>
+          <div class="case-card-body">
+            <p class="case-desc">Owned social media publishing and creative for the flagship Galaxy Z Fold4, Z Flip4, Galaxy Watch5/Pro, and Galaxy Buds2 Pro launch — Samsung's most successful Galaxy Z launch to date.</p>
+            <div class="case-highlights">
+              <div class="case-highlight"><strong>206M+ impressions</strong> generated across the launch campaign</div>
+              <div class="case-highlight"><strong>50% YoY increase</strong> in U.S. pre-orders — best Galaxy Z performance ever</div>
+              <div class="case-highlight">Times Square OOH billboard activation with live <strong>QR code integration</strong> promoted across social</div>
+              <div class="case-highlight">Partnered with <strong>BTS</strong> for global music video takeover at Galaxy Unpacked 2022</div>
+            </div>
+            <div class="case-tags">
+              <span class="case-tag">Product Launch</span>
+              <span class="case-tag">206M+ Impressions</span>
+              <span class="case-tag">OOH Integration</span>
+              <span class="case-tag">BTS Partnership</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-card-header">
+            <div class="case-title">Samsung Galaxy Creator Collective</div>
+            <span class="case-num">03</span>
+          </div>
+          <div class="case-card-body">
+            <p class="case-desc">"Not a conference. It's a collective." — Supported the marquee multi-day creator program positioning Samsung as the brand for next-gen creators and influencers.</p>
+            <div class="case-highlights">
+              <div class="case-highlight"><strong>12M+ livestream views</strong> across the multi-day event</div>
+              <div class="case-highlight"><strong>+14 point lift</strong> in targeted audience brand awareness</div>
+              <div class="case-highlight">Creator content promotion across YouTube &amp; Samsung.com; livestream returns <strong>March 21 &amp; 22</strong></div>
+              <div class="case-highlight">Integrated with influencer marketing teams to amplify Samsung's innovation story</div>
+            </div>
+            <div class="case-tags">
+              <span class="case-tag">12M+ Livestream Views</span>
+              <span class="case-tag">Influencer Program</span>
+              <span class="case-tag">+14pt Awareness Lift</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-card-header">
+            <div class="case-title">Samsung Galaxy × Jaden Smith (MSFTSrep)</div>
+            <span class="case-num">04</span>
+          </div>
+          <div class="case-card-body">
+            <p class="case-desc">Social content and promotion for the Samsung Galaxy × MSFTSrep eco-conscious accessories collection — a limited-edition Earth Day collaboration with Jaden Smith's sustainable fashion brand.</p>
+            <div class="case-highlights">
+              <div class="case-highlight">Eco-conscious accessories line timed to <strong>Earth Month</strong>, bridging Samsung's tech audience with sustainability</div>
+              <div class="case-highlight">Co-branded content across Samsung U.S. channels featuring <strong>Jaden Smith</strong> as brand partner</div>
+              <div class="case-highlight">Positioned Galaxy devices as tools for <strong>conscious creators and changemakers</strong></div>
+            </div>
+            <div class="case-tags">
+              <span class="case-tag">Celebrity Partnership</span>
+              <span class="case-tag">Earth Day</span>
+              <span class="case-tag">Co-branded Content</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-card-header">
+            <div class="case-title">Samsung Galaxy × Peloton</div>
+            <span class="case-num">05</span>
+          </div>
+          <div class="case-card-body">
+            <p class="case-desc">Cross-brand social activation highlighting the Galaxy Watch + Peloton fitness integration — targeting health-conscious Galaxy users with lifestyle-forward content.</p>
+            <div class="case-highlights">
+              <div class="case-highlight">Showcased <strong>Galaxy Watch fitness features</strong> through the Peloton ecosystem and community</div>
+              <div class="case-highlight">Lifestyle content blending <strong>wearables + fitness</strong> to expand Samsung's audience beyond tech enthusiasts</div>
+            </div>
+            <div class="case-tags">
+              <span class="case-tag">Brand Partnership</span>
+              <span class="case-tag">Wearables</span>
+              <span class="case-tag">Lifestyle Content</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-card-header">
+            <div class="case-title">Other Digital Highlights</div>
+            <span class="case-num">06</span>
+          </div>
+          <div class="case-card-body">
+            <p class="case-desc">Always-on content and seasonal activations across Samsung Mobile's social channels — from cultural moments to product drops.</p>
+            <div class="case-highlights">
+              <div class="case-highlight"><strong>BTS × Galaxy Unpacked 2022</strong> — global music video takeover campaign</div>
+              <div class="case-highlight"><strong>National Pokémon Day</strong> activation leveraging gaming culture</div>
+              <div class="case-highlight">Galaxy S22 launch content across Twitter, Instagram, and TikTok</div>
+              <div class="case-highlight">Seasonal campaigns: <strong>Back-to-School</strong>, Holiday, and product unboxing content</div>
+            </div>
+            <div class="case-tags">
+              <span class="case-tag">Always-On</span>
+              <span class="case-tag">Cultural Moments</span>
+              <span class="case-tag">BTS</span>
+              <span class="case-tag">Pokémon Day</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ATARI -->
+    <div class="work-brand-group">
+      <div class="work-brand-header">
+        <div class="brand-dot" style="background: linear-gradient(135deg,#ff4444,#ff8800);"></div>
+        <div>
+          <div class="brand-label">Atari, Inc</div>
+          <div class="brand-sublabel">Head of Social · New York City, NY · 2020–2022</div>
+        </div>
+      </div>
+      <div class="cases-grid">
+
+        <div class="case-card">
+          <div class="case-card-header">
+            <div class="case-title">Atari × LEGO Group</div>
+            <span class="case-num">01</span>
+          </div>
+          <div class="case-card-body">
+            <p class="case-desc">Led social promotion for the launch of the iconic 2,532-piece LEGO Atari 2600 set — a nostalgia-driven co-branded campaign that bridged gaming heritage with the collector community.</p>
+            <div class="case-highlights">
+              <div class="case-highlight"><strong>2,532-piece LEGO Atari 2600</strong> — nostalgic recreation of one of the most famous video game consoles of all time</div>
+              <div class="case-highlight">Cross-platform content on <strong>Twitter, Instagram, and YouTube</strong> driving to LEGO.com/Atari</div>
+              <div class="case-highlight">Tweet announcing the collab drove <strong>250+ likes</strong> and significant community engagement</div>
+              <div class="case-highlight">Merged Atari's retro gaming audience with <strong>LEGO's global collector base</strong></div>
+            </div>
+            <div class="case-tags">
+              <span class="case-tag">Brand Partnership</span>
+              <span class="case-tag">LEGO</span>
+              <span class="case-tag">Nostalgia Marketing</span>
+              <span class="case-tag">Twitter · Instagram</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-card-header">
+            <div class="case-title">Atari × RTFKT — NFT Fashion Series</div>
+            <span class="case-num">02</span>
+          </div>
+          <div class="case-card-body">
+            <p class="case-desc">Spearheaded Atari's landmark entry into NFTs — a limited-edition digital sneaker collection in partnership with RTFKT Studio, sold on SuperRare and usable across metaverse platforms.</p>
+            <div class="case-highlights">
+              <div class="case-highlight">Limited 1-of-1 "OG Edition" Atari Sneaker auctioned on <strong>SuperRare</strong>; 6 artist-collaboration variants</div>
+              <div class="case-highlight"><strong>Snapchat AR filter</strong> letting users virtually try on the NFT sneakers before buying</div>
+              <div class="case-highlight">In-game utility in <strong>Decentraland, The Sandbox</strong>, and Atari Metaverse</div>
+              <div class="case-highlight">TikTok campaign with <strong>RTFKT</strong>: "Would you play games on an Atari sneaker?"</div>
+              <div class="case-highlight">Coverage on <strong>Nasdaq, Yahoo Finance, Benzinga, Digital Journal</strong></div>
+            </div>
+            <div class="case-tags">
+              <span class="case-tag">NFT Launch</span>
+              <span class="case-tag">Snapchat AR</span>
+              <span class="case-tag">TikTok</span>
+              <span class="case-tag">Metaverse</span>
+              <span class="case-tag">Press Coverage</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- AIRSWAP -->
+    <div class="work-brand-group">
+      <div class="work-brand-header">
+        <div class="brand-dot" style="background: linear-gradient(135deg,#00d4ff,#0088ff);"></div>
+        <div>
+          <div class="brand-label">AirSwap (Fluidity Operations)</div>
+          <div class="brand-sublabel">Community &amp; Social Media Manager · Brooklyn, NY · 2018–2019</div>
+        </div>
+      </div>
+      <div class="cases-grid">
+
+        <div class="case-card">
+          <div class="case-card-header">
+            <div class="case-title">Brand Identity &amp; Community Build — From Zero</div>
+            <span class="case-num">01</span>
+          </div>
+          <div class="case-card-body">
+            <p class="case-desc">Joined as one of the first 15 employees at AirSwap, a decentralized exchange (DEX) startup. Built the entire social and community presence from scratch — tone, visuals, channels, and reporting.</p>
+            <div class="case-highlights">
+              <div class="case-highlight">Defined brand voice, visual style, and communication standards across <strong>Twitter, Reddit, and Telegram</strong></div>
+              <div class="case-highlight">Organized the inaugural <strong>Fluidity Summit 2018</strong> — 700+ attendees, establishing AirSwap as a DeFi thought leader</div>
+              <div class="case-highlight">Drove social promotion for the <strong>AirSwap MVP launch</strong>, partnering with industry influencers and crypto media</div>
+              <div class="case-highlight">Built <strong>growth reporting templates</strong> from scratch to track early traction for leadership</div>
+            </div>
+            <div class="case-tags">
+              <span class="case-tag">DeFi / Web3</span>
+              <span class="case-tag">Community Building</span>
+              <span class="case-tag">700+ Event Attendees</span>
+              <span class="case-tag">Brand from Zero</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -680,7 +1023,6 @@
     </div>
     <div class="exp-timeline">
 
-      <!-- Freelance -->
       <div class="exp-card">
         <div class="exp-header">
           <div>
@@ -693,20 +1035,15 @@
           </div>
         </div>
         <ul class="exp-bullets">
-          <li>Conduct social media <strong>audits and brand voice frameworks</strong> for clients across multiple industries, identifying what's working vs. underperforming and delivering actionable playbooks.</li>
-          <li>Develop <strong>content calendars and KPI scorecards</strong> (posting cadence, engagement rates, follower growth) enabling stakeholders to make fast, data-backed decisions.</li>
+          <li>Conduct social media <strong>audits and brand voice frameworks</strong> for clients across multiple industries, delivering actionable playbooks.</li>
+          <li>Develop <strong>content calendars and KPI scorecards</strong> (posting cadence, engagement rates, follower growth) for data-backed decision making.</li>
           <li>Introduced repeatable processes — approval workflows, naming conventions, posting checklists — to boost consistency and operational efficiency.</li>
         </ul>
         <div class="exp-tags">
-          <span class="exp-tag">Audits</span>
-          <span class="exp-tag">Brand Voice</span>
-          <span class="exp-tag">Content Strategy</span>
-          <span class="exp-tag">KPI Reporting</span>
-          <span class="exp-tag">Client Consulting</span>
+          <span class="exp-tag">Audits</span><span class="exp-tag">Brand Voice</span><span class="exp-tag">Content Strategy</span><span class="exp-tag">KPI Reporting</span>
         </div>
       </div>
 
-      <!-- BASILISK -->
       <div class="exp-card">
         <div class="exp-header">
           <div>
@@ -720,18 +1057,14 @@
         </div>
         <ul class="exp-bullets">
           <li>Hired as the <strong>first dedicated social media manager</strong> — created the startup's initial strategy, brand voice, and channel presence from scratch.</li>
-          <li>Built out a new <strong>partnerships program</strong> to drive co-marketing opportunities and community growth in the crypto/gaming space.</li>
-          <li>Set weekly and quarterly goals, ran content performance reviews, and iterated campaigns to continuously improve engagement metrics.</li>
+          <li>Built out a new <strong>partnerships program</strong> to drive co-marketing opportunities in the crypto/gaming space.</li>
+          <li>Set weekly and quarterly goals, ran content performance reviews, and iterated campaigns to improve engagement.</li>
         </ul>
         <div class="exp-tags">
-          <span class="exp-tag">Brand Build</span>
-          <span class="exp-tag">Partnerships</span>
-          <span class="exp-tag">Crypto / Web3</span>
-          <span class="exp-tag">Growth Strategy</span>
+          <span class="exp-tag">Brand Build</span><span class="exp-tag">Partnerships</span><span class="exp-tag">Crypto / Web3</span>
         </div>
       </div>
 
-      <!-- Samsung -->
       <div class="exp-card">
         <div class="exp-header">
           <div>
@@ -744,21 +1077,16 @@
           </div>
         </div>
         <ul class="exp-bullets">
-          <li>Led social media launch campaigns for <strong>Galaxy Z Fold5 &amp; Z Flip5</strong>, contributing to <strong>206M+ impressions</strong> and a <strong>50% YoY increase in U.S. pre-orders</strong> — Samsung's most successful Galaxy Z launch to date.</li>
-          <li>Supported the <strong>Galaxy Creator Collective 2023/2024</strong>, a multi-day livestream event with <strong>12M+ views</strong> and a <strong>+14 point lift</strong> in targeted audience awareness.</li>
-          <li>Served as social planning lead for <strong>Summer of Galaxy 2022 &amp; 2023</strong>, coordinating an exclusive Billboard × Samsung concert headlined by Sabrina Carpenter — driving record fan engagement.</li>
-          <li>Managed <strong>always-on and seasonal campaigns</strong> (Back-to-School, Holiday) across smartphones, wearables, and B2B — coordinating directly with Meta, Google, TikTok, Twitter, and Reddit.</li>
+          <li>Led social for <strong>Galaxy Z Fold5 &amp; Flip5</strong> — <strong>206M+ impressions</strong>, <strong>50% YoY pre-order increase</strong>, Samsung's most successful Galaxy Z launch ever.</li>
+          <li><strong>Galaxy Creator Collective</strong> — 12M+ livestream views, +14 point brand awareness lift.</li>
+          <li>Social planning lead for <strong>Summer of Galaxy 2022 &amp; 2023</strong> — exclusive Billboard × Samsung concert with Sabrina Carpenter.</li>
+          <li>Managed always-on and seasonal campaigns across smartphones, wearables, B2B, coordinating with <strong>Meta, Google, TikTok, Twitter, Reddit</strong>.</li>
         </ul>
         <div class="exp-tags">
-          <span class="exp-tag">206M+ Impressions</span>
-          <span class="exp-tag">Influencer Marketing</span>
-          <span class="exp-tag">Campaign Management</span>
-          <span class="exp-tag">Platform Partnerships</span>
-          <span class="exp-tag">Multi-Agency</span>
+          <span class="exp-tag">206M+ Impressions</span><span class="exp-tag">Influencer Marketing</span><span class="exp-tag">Multi-Agency</span><span class="exp-tag">Platform Partnerships</span>
         </div>
       </div>
 
-      <!-- Atari -->
       <div class="exp-card">
         <div class="exp-header">
           <div>
@@ -771,22 +1099,15 @@
           </div>
         </div>
         <ul class="exp-bullets">
-          <li>Rebuilt Atari's social media program from ad-hoc to <strong>strategic and calendar-driven</strong>, introducing quarterly content calendars and standardized approval workflows.</li>
-          <li>Brought outsourced social functions <strong>in-house</strong>, reducing agency costs while achieving growth in both follower count and engagement metrics.</li>
-          <li>Spearheaded all <strong>NFT and crypto marketing</strong> — including the Atari × RTFKT limited-edition NFT fashion series and Atari's entry into metaverse platforms.</li>
-          <li>Led social campaigns for Atari's <strong>50th Anniversary</strong>, including co-branded partnerships with LEGO, engaging both nostalgic and next-generation audiences globally.</li>
-          <li>Operated in a fully remote, <strong>internationally distributed team</strong> across time zones with daily stand-ups and digital task boards.</li>
+          <li>Rebuilt Atari's social program from ad-hoc to <strong>strategic and calendar-driven</strong>; brought outsourced functions in-house, reducing agency costs while growing engagement.</li>
+          <li>Led all <strong>NFT and crypto marketing</strong> — Atari × RTFKT NFT sneaker drop, Snapchat AR try-on, metaverse platform integration.</li>
+          <li><strong>50th Anniversary</strong> campaigns including Atari × LEGO — engaging nostalgic and next-gen fans globally.</li>
         </ul>
         <div class="exp-tags">
-          <span class="exp-tag">Team Leadership</span>
-          <span class="exp-tag">NFT Marketing</span>
-          <span class="exp-tag">Brand Partnerships</span>
-          <span class="exp-tag">In-House Build</span>
-          <span class="exp-tag">Remote Management</span>
+          <span class="exp-tag">Team Leadership</span><span class="exp-tag">NFT Marketing</span><span class="exp-tag">Brand Partnerships</span><span class="exp-tag">Remote Management</span>
         </div>
       </div>
 
-      <!-- AirSwap -->
       <div class="exp-card">
         <div class="exp-header">
           <div>
@@ -799,17 +1120,12 @@
           </div>
         </div>
         <ul class="exp-bullets">
-          <li>Joined as one of the <strong>first 15 employees</strong> at AirSwap (decentralized exchange) — defined brand identity, tone of voice, and social presence from the ground up.</li>
-          <li>Managed community channels and customer support across <strong>Twitter, Reddit, and Telegram</strong>, serving as the primary public liaison for the crypto community.</li>
-          <li>Organized the inaugural <strong>Fluidity Summit</strong> in 2018 — a large-scale industry event attracting <strong>700+ attendees</strong> that established AirSwap as a DeFi thought leader.</li>
-          <li>Developed <strong>growth reporting templates</strong> and drove social promotion for key product milestones including the AirSwap MVP launch.</li>
+          <li>Joined as one of the <strong>first 15 employees</strong> at AirSwap — defined brand identity, tone, and social presence from the ground up.</li>
+          <li>Organized the inaugural <strong>Fluidity Summit 2018</strong> — 700+ attendees, positioning AirSwap as a DeFi thought leader.</li>
+          <li>Managed community and customer support across <strong>Twitter, Reddit, and Telegram</strong>.</li>
         </ul>
         <div class="exp-tags">
-          <span class="exp-tag">DeFi / Crypto</span>
-          <span class="exp-tag">Community Management</span>
-          <span class="exp-tag">Event Production</span>
-          <span class="exp-tag">Brand Identity</span>
-          <span class="exp-tag">Startup (Employee #&lt;15)</span>
+          <span class="exp-tag">DeFi / Crypto</span><span class="exp-tag">Community Management</span><span class="exp-tag">Event Production</span><span class="exp-tag">Startup #&lt;15</span>
         </div>
       </div>
 
@@ -823,10 +1139,9 @@
     <div class="section-header">
       <div class="section-tag">// skills &amp; tools</div>
       <h2 class="section-title">What I Bring to the Table</h2>
-      <p class="section-subtitle">A mix of strategic thinking, creative execution, and operational rigor.</p>
+      <p class="section-subtitle">Strategic thinking, creative execution, and operational rigor.</p>
     </div>
     <div class="skills-grid">
-
       <div class="skill-group">
         <div class="skill-group-icon">📊</div>
         <h3>Strategy &amp; Analytics</h3>
@@ -839,7 +1154,6 @@
           <li>Campaign performance review</li>
         </ul>
       </div>
-
       <div class="skill-group">
         <div class="skill-group-icon">📱</div>
         <h3>Platforms</h3>
@@ -853,7 +1167,6 @@
           <li>YouTube</li>
         </ul>
       </div>
-
       <div class="skill-group">
         <div class="skill-group-icon">🎯</div>
         <h3>Campaign Management</h3>
@@ -866,7 +1179,6 @@
           <li>Cross-functional collaboration</li>
         </ul>
       </div>
-
       <div class="skill-group">
         <div class="skill-group-icon">⛓️</div>
         <h3>Web3 &amp; Crypto</h3>
@@ -875,11 +1187,10 @@
           <li>DeFi community building</li>
           <li>Blockchain gaming promotion</li>
           <li>Metaverse brand activations</li>
-          <li>Crypto Twitter / CT</li>
-          <li>Ecosystem partnerships</li>
+          <li>Crypto Twitter / CT strategy</li>
+          <li>AR &amp; interactive experiences</li>
         </ul>
       </div>
-
       <div class="skill-group">
         <div class="skill-group-icon">⚙️</div>
         <h3>Operations &amp; Process</h3>
@@ -892,7 +1203,6 @@
           <li>Digital task boards</li>
         </ul>
       </div>
-
       <div class="skill-group">
         <div class="skill-group-icon">🤝</div>
         <h3>Partnerships &amp; Community</h3>
@@ -905,7 +1215,6 @@
           <li>Thought leadership content</li>
         </ul>
       </div>
-
     </div>
   </div>
 </section>
@@ -919,35 +1228,30 @@
       <p class="section-subtitle">Work that made headlines.</p>
     </div>
     <div class="press-grid">
-
       <a class="press-card" href="https://www.nasdaq.com/press-release/atarir-partners-with-rtfkt-studio-on-limited-edition-nft-fashionseries-2021-03-11" target="_blank" rel="noopener">
-        <div class="press-source">Nasdaq · 2021</div>
+        <div class="press-source">Nasdaq · March 2021</div>
         <div class="press-title">Atari Partners with RTFKT Studio on Limited-Edition NFT Fashion Series</div>
-        <div class="press-desc">A groundbreaking collaboration between Atari and the NFT fashion studio RTFKT, integrating Atari's gaming IP into the emerging digital fashion and metaverse space.</div>
+        <div class="press-desc">Atari's landmark entry into digital fashion — a limited NFT sneaker collection usable across Decentraland, The Sandbox, and the Atari Metaverse, with Snapchat AR try-on.</div>
         <div class="press-arrow">Read on Nasdaq →</div>
       </a>
-
       <a class="press-card" href="https://www.nasdaq.com/press-release/atarir-partners-with-hello-there-games-and-chain-games-to-bring-rhythmaction-game" target="_blank" rel="noopener">
         <div class="press-source">Nasdaq · 2021</div>
         <div class="press-title">Atari Partners with Hello There Games and Chain Games to Bring Rhythm-Action Game</div>
-        <div class="press-desc">Atari's expansion into blockchain gaming, bringing a rhythm-action title to the Chain Games ecosystem — a campaign led by the in-house social and marketing team.</div>
+        <div class="press-desc">Atari's expansion into blockchain gaming — a rhythm-action title brought to the Chain Games ecosystem, led by the in-house social and marketing team.</div>
         <div class="press-arrow">Read on Nasdaq →</div>
       </a>
-
+      <a class="press-card" href="https://www.billboard.com/music/music-news/summer-of-galaxy-1235116969/" target="_blank" rel="noopener">
+        <div class="press-source">Billboard · July 2022</div>
+        <div class="press-title">Sabrina Carpenter Debuts New Music at Samsung's Summer of Galaxy</div>
+        <div class="press-desc">Coverage of the exclusive Samsung × Billboard concert event — Sabrina Carpenter's first live performance in 3 years, part of the fan-reward campaign.</div>
+        <div class="press-arrow">Read on Billboard →</div>
+      </a>
       <div class="press-card" style="cursor:default;">
-        <div class="press-source">Samsung · 2022–2023</div>
-        <div class="press-title">Galaxy Z Fold5 &amp; Flip5 — Most Successful Launch in Galaxy Z History</div>
-        <div class="press-desc">Contributed to a social campaign that drove 206M+ impressions and a 50% year-over-year increase in U.S. pre-orders for Samsung's flagship foldable line.</div>
-        <div class="press-arrow" style="color: var(--muted);">Internal campaign — not publicly linked</div>
+        <div class="press-source">Samsung U.S. Newsroom · 2022–2023</div>
+        <div class="press-title">Galaxy Z Fold5 &amp; Flip5 — Most Successful Galaxy Z Launch in History</div>
+        <div class="press-desc">Campaign contributing to 206M+ impressions and a 50% year-over-year increase in U.S. pre-orders for Samsung's flagship foldable lineup.</div>
+        <div class="press-arrow" style="color:var(--muted);">Internal campaign</div>
       </div>
-
-      <div class="press-card" style="cursor:default;">
-        <div class="press-source">AirSwap / Fluidity Summit · 2018</div>
-        <div class="press-title">Fluidity Summit 2018 — Inaugural DeFi Industry Event</div>
-        <div class="press-desc">Organized and socially promoted AirSwap's first large-scale industry conference, drawing 700+ attendees and positioning the startup as a thought leader in decentralized finance.</div>
-        <div class="press-arrow" style="color: var(--muted);">Industry event — 700+ attendees</div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -960,7 +1264,7 @@
       <h2 class="section-title" style="text-align:center;">Let's Work Together</h2>
       <p class="section-subtitle" style="margin:0 auto; text-align:center;">
         Open to full-time roles, consulting engagements, and strategic partnerships.
-        Currently based in Arlington, TX — remote-friendly.
+        Based in Arlington, TX — remote-friendly.
       </p>
       <div class="contact-card">
         <div class="contact-links">
@@ -988,8 +1292,15 @@
           <a class="contact-link" href="https://peterdao.my.canva.site/" target="_blank" rel="noopener">
             <div class="contact-link-icon">🎨</div>
             <div class="contact-link-text">
-              <div class="contact-link-label">Portfolio (Canva)</div>
+              <div class="contact-link-label">Full Portfolio (Canva)</div>
               <div class="contact-link-value">peterdao.my.canva.site</div>
+            </div>
+          </a>
+          <a class="contact-link" href="https://x.com/DaoPeter" target="_blank" rel="noopener">
+            <div class="contact-link-icon">🐦</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">X / Twitter</div>
+              <div class="contact-link-value">@DaoPeter</div>
             </div>
           </a>
         </div>
