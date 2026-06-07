@@ -223,6 +223,45 @@
     }
     .section-header { margin-bottom: 3.5rem; }
 
+    /* ── BRANDS BAR ── */
+    #brands {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+    }
+    .brands-label {
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .brands-row {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3.5rem;
+      flex-wrap: wrap;
+    }
+    .brand-logo {
+      font-weight: 900;
+      font-size: 1.35rem;
+      letter-spacing: -0.5px;
+      color: rgba(255,255,255,0.25);
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .brand-logo:hover { color: rgba(255,255,255,0.6); }
+    .brand-logo.samsung { font-size: 1.2rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; }
+    .brand-logo.atari { font-size: 1.4rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 900; }
+    .brand-logo.airswap { font-size: 1.15rem; letter-spacing: 0.05em; }
+    .brand-logo.basilisk { font-size: 1.2rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .brand-logo.wpt { font-size: 1.1rem; letter-spacing: 0.12em; text-transform: uppercase; }
+
     /* ── ABOUT ── */
     #about { background: var(--bg); }
     .about-grid {
@@ -705,6 +744,18 @@
       <div class="stat-label">Event Attendees</div>
       <div class="stat-source">Fluidity Summit 2018 (AirSwap)</div>
     </div>
+  </div>
+</div>
+
+<!-- BRANDS -->
+<div id="brands">
+  <div class="brands-label">Companies I've worked with</div>
+  <div class="brands-row">
+    <span class="brand-logo samsung">Samsung</span>
+    <span class="brand-logo atari">Atari</span>
+    <span class="brand-logo airswap">AirSwap</span>
+    <span class="brand-logo basilisk">Basilisk</span>
+    <span class="brand-logo wpt">World Poker Tour</span>
   </div>
 </div>
 
