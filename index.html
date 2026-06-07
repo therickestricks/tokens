@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peter Dao — Social Media Manager</title>
+  <meta name="description" content="Peter Dao is a social media strategist with experience at Samsung, Atari, and leading Web3 startups. 206M+ impressions. 12M+ livestream views." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --bg2: #111118;
+      --bg3: #18181f;
+      --border: rgba(255,255,255,0.08);
+      --accent: #6c63ff;
+      --accent2: #00d4ff;
+      --accent-grad: linear-gradient(135deg, #6c63ff, #00d4ff);
+      --text: #f0f0f8;
+      --muted: #8888aa;
+      --card: #14141c;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 2rem;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      background: var(--accent-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.5px;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--accent-grad);
+      color: #fff !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 6px;
+      font-weight: 600 !important;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(108,99,255,0.18) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -60%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.35);
+      color: #a89dff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-name {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 1rem;
+    }
+    .hero-name span {
+      background: var(--accent-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-title {
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      color: var(--muted);
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title strong { color: var(--text); font-weight: 600; }
+    .hero-desc {
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--accent-grad);
+      color: #fff;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.25); transform: translateY(-2px); }
+
+    /* ── STATS BAR ── */
+    #stats {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem;
+    }
+    .stats-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      background: var(--accent-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .stat-source {
+      color: rgba(136,136,170,0.5);
+      font-size: 0.72rem;
+      margin-top: 0.25rem;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+    .section-header { margin-bottom: 3.5rem; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-text p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+      font-size: 1.02rem;
+    }
+    .about-text p strong { color: var(--text); }
+    .about-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+    .pill {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+    }
+    .about-highlights { display: flex; flex-direction: column; gap: 1.2rem; }
+    .highlight-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .highlight-card:hover { border-color: rgba(108,99,255,0.4); }
+    .highlight-card h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.4rem;
+    }
+    .highlight-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--bg2); }
+    .exp-timeline { display: flex; flex-direction: column; gap: 2rem; }
+    .exp-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem 2.25rem;
+      position: relative;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .exp-card:hover {
+      border-color: rgba(108,99,255,0.35);
+      transform: translateY(-3px);
+    }
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      top: 2rem; left: -1px;
+      width: 3px; height: 2rem;
+      background: var(--accent-grad);
+      border-radius: 0 2px 2px 0;
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .exp-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .exp-company {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+    .exp-meta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .exp-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: var(--bg3);
+      padding: 0.3rem 0.75rem;
+      border-radius: 4px;
+    }
+    .exp-location {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .exp-bullets {
+      list-style: none;
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .exp-bullets li {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.65;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .exp-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .exp-bullets li strong { color: var(--text); }
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+    .exp-tag {
+      background: rgba(108,99,255,0.1);
+      border: 1px solid rgba(108,99,255,0.2);
+      color: #a89dff;
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--bg); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-group {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.75rem;
+      transition: border-color 0.2s;
+    }
+    .skill-group:hover { border-color: rgba(0,212,255,0.3); }
+    .skill-group-icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .skill-group h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .skill-list li {
+      color: var(--muted);
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .skill-list li::before {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent-grad);
+      flex-shrink: 0;
+    }
+
+    /* ── PRESS ── */
+    #press { background: var(--bg2); }
+    .press-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .press-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.75rem;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .press-card:hover {
+      border-color: rgba(0,212,255,0.4);
+      transform: translateY(-3px);
+    }
+    .press-source {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent2);
+      margin-bottom: 0.75rem;
+    }
+    .press-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+    .press-desc {
+      font-size: 0.87rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .press-arrow {
+      margin-top: 1rem;
+      color: var(--accent2);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg); }
+    .contact-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      margin-top: 2.5rem;
+    }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .contact-link:hover { border-color: rgba(108,99,255,0.5); }
+    .contact-link-icon {
+      width: 2.5rem; height: 2.5rem;
+      border-radius: 8px;
+      background: var(--accent-grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-link-text { text-align: left; }
+    .contact-link-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .contact-link-value {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    footer span {
+      background: var(--accent-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .exp-card { padding: 1.5rem 1.25rem; }
+      .exp-header { flex-direction: column; }
+      section { padding: 4rem 1.25rem; }
+      .contact-card { padding: 2rem 1.5rem; }
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.7s ease both; }
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.3s; }
+    .delay-3 { animation-delay: 0.45s; }
+    .delay-4 { animation-delay: 0.6s; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Peter Dao</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#press">Press</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div style="position:relative; z-index:1;">
+    <div class="hero-badge fade-up">Social Media Manager &amp; Strategist</div>
+    <h1 class="hero-name fade-up delay-1">
+      Peter <span>Dao</span>
+    </h1>
+    <p class="hero-title fade-up delay-2">
+      <strong>7+ years</strong> driving brand growth at Samsung, Atari &amp; Web3 startups
+    </p>
+    <p class="hero-desc fade-up delay-3">
+      I build social media programs from scratch, turn platforms into revenue channels,
+      and create the kind of content that moves real numbers — impressions, pre-orders, awareness.
+    </p>
+    <div class="hero-btns fade-up delay-4">
+      <a href="#experience" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="stats-grid">
+    <div>
+      <div class="stat-number">206M+</div>
+      <div class="stat-label">Impressions Generated</div>
+      <div class="stat-source">Samsung Galaxy Z Launch</div>
+    </div>
+    <div>
+      <div class="stat-number">50%</div>
+      <div class="stat-label">YoY Pre-Order Increase</div>
+      <div class="stat-source">Galaxy Z Fold5 &amp; Flip5 — Samsung's best ever</div>
+    </div>
+    <div>
+      <div class="stat-number">12M+</div>
+      <div class="stat-label">Livestream Views</div>
+      <div class="stat-source">Galaxy Creator Collective</div>
+    </div>
+    <div>
+      <div class="stat-number">700+</div>
+      <div class="stat-label">Event Attendees</div>
+      <div class="stat-source">Fluidity Summit 2018 (AirSwap)</div>
+    </div>
+    <div>
+      <div class="stat-number">+14pt</div>
+      <div class="stat-label">Brand Awareness Lift</div>
+      <div class="stat-source">Targeted audience — Samsung</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="section-tag">// about me</div>
+        <h2 class="section-title">Strategy-first.<br>Data-backed.<br>Results-driven.</h2>
+        <div class="about-text">
+          <p>
+            I'm a social media manager and strategist with over 7 years of experience leading
+            programs at both <strong>Fortune 500 companies</strong> and <strong>early-stage startups</strong>.
+            From building Samsung's most successful Galaxy Z launch to establishing Atari's social
+            presence during its blockchain era, I specialize in building things from the ground up.
+          </p>
+          <p>
+            My work lives at the intersection of creative content and analytical rigor — I build
+            repeatable systems (calendars, approval workflows, KPI scorecards) so that high quality
+            output becomes the default, not the exception.
+          </p>
+          <p>
+            Based in <strong>Arlington, TX</strong>. Bilingual in <strong>English &amp; Vietnamese</strong>.
+            Currently available for consulting and full-time opportunities.
+          </p>
+          <div class="about-pills">
+            <span class="pill">Arlington, TX</span>
+            <span class="pill">Open to Remote</span>
+            <span class="pill">English &amp; Vietnamese</span>
+            <span class="pill">Available Now</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-card">
+          <h4>Brand Launches</h4>
+          <p>Built social presences from zero at AirSwap, Basilisk, and Atari — defining tone of voice, visual style, and platform strategy before a single post went live.</p>
+        </div>
+        <div class="highlight-card">
+          <h4>Enterprise Scale</h4>
+          <p>Managed multi-agency campaigns across Samsung Mobile's full product portfolio, coordinating directly with Meta, Google, TikTok, Twitter, and Reddit as platform partners.</p>
+        </div>
+        <div class="highlight-card">
+          <h4>Web3 &amp; Crypto Native</h4>
+          <p>Deep experience in the crypto and blockchain space — from DeFi community management at AirSwap to NFT campaign leadership at Atari (Atari × RTFKT, Atari × LEGO).</p>
+        </div>
+        <div class="highlight-card">
+          <h4>Consulting &amp; Strategy</h4>
+          <p>Currently providing social media audits, brand voice guidelines, and actionable content playbooks to clients across multiple industries as an independent consultant.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">// experience</div>
+      <h2 class="section-title">Where I've Built Things</h2>
+      <p class="section-subtitle">A track record across Fortune 500 brands, gaming companies, and Web3 startups.</p>
+    </div>
+    <div class="exp-timeline">
+
+      <!-- Freelance -->
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">Freelance Consulting (Contract · NDA)</div>
+            <div class="exp-title">Social Media Marketing Consultant</div>
+          </div>
+          <div class="exp-meta">
+            <span class="exp-date">Jan 2024 – Present</span>
+            <span class="exp-location">📍 Arlington, TX</span>
+          </div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Conduct social media <strong>audits and brand voice frameworks</strong> for clients across multiple industries, identifying what's working vs. underperforming and delivering actionable playbooks.</li>
+          <li>Develop <strong>content calendars and KPI scorecards</strong> (posting cadence, engagement rates, follower growth) enabling stakeholders to make fast, data-backed decisions.</li>
+          <li>Introduced repeatable processes — approval workflows, naming conventions, posting checklists — to boost consistency and operational efficiency.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Audits</span>
+          <span class="exp-tag">Brand Voice</span>
+          <span class="exp-tag">Content Strategy</span>
+          <span class="exp-tag">KPI Reporting</span>
+          <span class="exp-tag">Client Consulting</span>
+        </div>
+      </div>
+
+      <!-- BASILISK -->
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">BASILISK · Crypto / Gaming Startup</div>
+            <div class="exp-title">Social Media &amp; Partnerships Manager</div>
+          </div>
+          <div class="exp-meta">
+            <span class="exp-date">Aug 2023 – Dec 2023</span>
+            <span class="exp-location">📍 Honolulu, HI</span>
+          </div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Hired as the <strong>first dedicated social media manager</strong> — created the startup's initial strategy, brand voice, and channel presence from scratch.</li>
+          <li>Built out a new <strong>partnerships program</strong> to drive co-marketing opportunities and community growth in the crypto/gaming space.</li>
+          <li>Set weekly and quarterly goals, ran content performance reviews, and iterated campaigns to continuously improve engagement metrics.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Brand Build</span>
+          <span class="exp-tag">Partnerships</span>
+          <span class="exp-tag">Crypto / Web3</span>
+          <span class="exp-tag">Growth Strategy</span>
+        </div>
+      </div>
+
+      <!-- Samsung -->
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">Samsung Electronics America</div>
+            <div class="exp-title">Marketing Coordinator — Social Media</div>
+          </div>
+          <div class="exp-meta">
+            <span class="exp-date">May 2022 – Jun 2023</span>
+            <span class="exp-location">📍 Plano, TX</span>
+          </div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Led social media launch campaigns for <strong>Galaxy Z Fold5 &amp; Z Flip5</strong>, contributing to <strong>206M+ impressions</strong> and a <strong>50% YoY increase in U.S. pre-orders</strong> — Samsung's most successful Galaxy Z launch to date.</li>
+          <li>Supported the <strong>Galaxy Creator Collective 2023/2024</strong>, a multi-day livestream event with <strong>12M+ views</strong> and a <strong>+14 point lift</strong> in targeted audience awareness.</li>
+          <li>Served as social planning lead for <strong>Summer of Galaxy 2022 &amp; 2023</strong>, coordinating an exclusive Billboard × Samsung concert headlined by Sabrina Carpenter — driving record fan engagement.</li>
+          <li>Managed <strong>always-on and seasonal campaigns</strong> (Back-to-School, Holiday) across smartphones, wearables, and B2B — coordinating directly with Meta, Google, TikTok, Twitter, and Reddit.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">206M+ Impressions</span>
+          <span class="exp-tag">Influencer Marketing</span>
+          <span class="exp-tag">Campaign Management</span>
+          <span class="exp-tag">Platform Partnerships</span>
+          <span class="exp-tag">Multi-Agency</span>
+        </div>
+      </div>
+
+      <!-- Atari -->
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">Atari, Inc</div>
+            <div class="exp-title">Head of Social Media</div>
+          </div>
+          <div class="exp-meta">
+            <span class="exp-date">Apr 2020 – May 2022</span>
+            <span class="exp-location">📍 New York City, NY (Remote)</span>
+          </div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Rebuilt Atari's social media program from ad-hoc to <strong>strategic and calendar-driven</strong>, introducing quarterly content calendars and standardized approval workflows.</li>
+          <li>Brought outsourced social functions <strong>in-house</strong>, reducing agency costs while achieving growth in both follower count and engagement metrics.</li>
+          <li>Spearheaded all <strong>NFT and crypto marketing</strong> — including the Atari × RTFKT limited-edition NFT fashion series and Atari's entry into metaverse platforms.</li>
+          <li>Led social campaigns for Atari's <strong>50th Anniversary</strong>, including co-branded partnerships with LEGO, engaging both nostalgic and next-generation audiences globally.</li>
+          <li>Operated in a fully remote, <strong>internationally distributed team</strong> across time zones with daily stand-ups and digital task boards.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Team Leadership</span>
+          <span class="exp-tag">NFT Marketing</span>
+          <span class="exp-tag">Brand Partnerships</span>
+          <span class="exp-tag">In-House Build</span>
+          <span class="exp-tag">Remote Management</span>
+        </div>
+      </div>
+
+      <!-- AirSwap -->
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">Fluidity Operations LLC (AirSwap)</div>
+            <div class="exp-title">Community &amp; Social Media Manager</div>
+          </div>
+          <div class="exp-meta">
+            <span class="exp-date">Apr 2018 – Sep 2019</span>
+            <span class="exp-location">📍 Brooklyn, NY</span>
+          </div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Joined as one of the <strong>first 15 employees</strong> at AirSwap (decentralized exchange) — defined brand identity, tone of voice, and social presence from the ground up.</li>
+          <li>Managed community channels and customer support across <strong>Twitter, Reddit, and Telegram</strong>, serving as the primary public liaison for the crypto community.</li>
+          <li>Organized the inaugural <strong>Fluidity Summit</strong> in 2018 — a large-scale industry event attracting <strong>700+ attendees</strong> that established AirSwap as a DeFi thought leader.</li>
+          <li>Developed <strong>growth reporting templates</strong> and drove social promotion for key product milestones including the AirSwap MVP launch.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">DeFi / Crypto</span>
+          <span class="exp-tag">Community Management</span>
+          <span class="exp-tag">Event Production</span>
+          <span class="exp-tag">Brand Identity</span>
+          <span class="exp-tag">Startup (Employee #&lt;15)</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">// skills &amp; tools</div>
+      <h2 class="section-title">What I Bring to the Table</h2>
+      <p class="section-subtitle">A mix of strategic thinking, creative execution, and operational rigor.</p>
+    </div>
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <div class="skill-group-icon">📊</div>
+        <h3>Strategy &amp; Analytics</h3>
+        <ul class="skill-list">
+          <li>Social media audits</li>
+          <li>KPI scorecards &amp; reporting</li>
+          <li>Content calendar development</li>
+          <li>Brand voice &amp; guidelines</li>
+          <li>Competitive analysis</li>
+          <li>Campaign performance review</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-icon">📱</div>
+        <h3>Platforms</h3>
+        <ul class="skill-list">
+          <li>Instagram &amp; Facebook (Meta)</li>
+          <li>TikTok</li>
+          <li>X / Twitter</li>
+          <li>LinkedIn</li>
+          <li>Reddit</li>
+          <li>Telegram &amp; Discord</li>
+          <li>YouTube</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-icon">🎯</div>
+        <h3>Campaign Management</h3>
+        <ul class="skill-list">
+          <li>End-to-end campaign ownership</li>
+          <li>Influencer &amp; creator programs</li>
+          <li>Multi-agency coordination</li>
+          <li>Platform partner relationships</li>
+          <li>Paid &amp; organic channel mix</li>
+          <li>Cross-functional collaboration</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-icon">⛓️</div>
+        <h3>Web3 &amp; Crypto</h3>
+        <ul class="skill-list">
+          <li>NFT campaign marketing</li>
+          <li>DeFi community building</li>
+          <li>Blockchain gaming promotion</li>
+          <li>Metaverse brand activations</li>
+          <li>Crypto Twitter / CT</li>
+          <li>Ecosystem partnerships</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-icon">⚙️</div>
+        <h3>Operations &amp; Process</h3>
+        <ul class="skill-list">
+          <li>Approval workflows</li>
+          <li>Naming conventions &amp; SOPs</li>
+          <li>Publishing checklists</li>
+          <li>Team onboarding</li>
+          <li>Remote &amp; async coordination</li>
+          <li>Digital task boards</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-icon">🤝</div>
+        <h3>Partnerships &amp; Community</h3>
+        <ul class="skill-list">
+          <li>Co-marketing programs</li>
+          <li>Brand &amp; licensing partnerships</li>
+          <li>Event production &amp; promotion</li>
+          <li>Community moderation</li>
+          <li>Influencer outreach</li>
+          <li>Thought leadership content</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section id="press">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">// press &amp; publications</div>
+      <h2 class="section-title">In the News</h2>
+      <p class="section-subtitle">Work that made headlines.</p>
+    </div>
+    <div class="press-grid">
+
+      <a class="press-card" href="https://www.nasdaq.com/press-release/atarir-partners-with-rtfkt-studio-on-limited-edition-nft-fashionseries-2021-03-11" target="_blank" rel="noopener">
+        <div class="press-source">Nasdaq · 2021</div>
+        <div class="press-title">Atari Partners with RTFKT Studio on Limited-Edition NFT Fashion Series</div>
+        <div class="press-desc">A groundbreaking collaboration between Atari and the NFT fashion studio RTFKT, integrating Atari's gaming IP into the emerging digital fashion and metaverse space.</div>
+        <div class="press-arrow">Read on Nasdaq →</div>
+      </a>
+
+      <a class="press-card" href="https://www.nasdaq.com/press-release/atarir-partners-with-hello-there-games-and-chain-games-to-bring-rhythmaction-game" target="_blank" rel="noopener">
+        <div class="press-source">Nasdaq · 2021</div>
+        <div class="press-title">Atari Partners with Hello There Games and Chain Games to Bring Rhythm-Action Game</div>
+        <div class="press-desc">Atari's expansion into blockchain gaming, bringing a rhythm-action title to the Chain Games ecosystem — a campaign led by the in-house social and marketing team.</div>
+        <div class="press-arrow">Read on Nasdaq →</div>
+      </a>
+
+      <div class="press-card" style="cursor:default;">
+        <div class="press-source">Samsung · 2022–2023</div>
+        <div class="press-title">Galaxy Z Fold5 &amp; Flip5 — Most Successful Launch in Galaxy Z History</div>
+        <div class="press-desc">Contributed to a social campaign that drove 206M+ impressions and a 50% year-over-year increase in U.S. pre-orders for Samsung's flagship foldable line.</div>
+        <div class="press-arrow" style="color: var(--muted);">Internal campaign — not publicly linked</div>
+      </div>
+
+      <div class="press-card" style="cursor:default;">
+        <div class="press-source">AirSwap / Fluidity Summit · 2018</div>
+        <div class="press-title">Fluidity Summit 2018 — Inaugural DeFi Industry Event</div>
+        <div class="press-desc">Organized and socially promoted AirSwap's first large-scale industry conference, drawing 700+ attendees and positioning the startup as a thought leader in decentralized finance.</div>
+        <div class="press-arrow" style="color: var(--muted);">Industry event — 700+ attendees</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-inner">
+      <div class="section-tag" style="text-align:center;">// contact</div>
+      <h2 class="section-title" style="text-align:center;">Let's Work Together</h2>
+      <p class="section-subtitle" style="margin:0 auto; text-align:center;">
+        Open to full-time roles, consulting engagements, and strategic partnerships.
+        Currently based in Arlington, TX — remote-friendly.
+      </p>
+      <div class="contact-card">
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:daopeter224@gmail.com">
+            <div class="contact-link-icon">✉️</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">Email</div>
+              <div class="contact-link-value">daopeter224@gmail.com</div>
+            </div>
+          </a>
+          <a class="contact-link" href="tel:6825607756">
+            <div class="contact-link-icon">📞</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">Phone</div>
+              <div class="contact-link-value">(682) 560-7756</div>
+            </div>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/peter-dao/" target="_blank" rel="noopener">
+            <div class="contact-link-icon">💼</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">LinkedIn</div>
+              <div class="contact-link-value">linkedin.com/in/peter-dao</div>
+            </div>
+          </a>
+          <a class="contact-link" href="https://peterdao.my.canva.site/" target="_blank" rel="noopener">
+            <div class="contact-link-icon">🎨</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">Portfolio (Canva)</div>
+              <div class="contact-link-value">peterdao.my.canva.site</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Peter Dao</span> · Social Media Manager &amp; Strategist · Arlington, TX</p>
+</footer>
+
+</body>
+</html>
